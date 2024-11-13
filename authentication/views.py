@@ -20,6 +20,7 @@ def logout(request):
         "status": False,
         "message": "Logout gagal."
         }, status=401)
+        
 @csrf_exempt
 def login(request):
     username = request.POST['username']
@@ -54,7 +55,7 @@ def register(request):
         username = data['username']
         password1 = data['password1']
         password2 = data['password2']
-
+        print(data)
         # Check if the passwords match
         if password1 != password2:
             return JsonResponse({
